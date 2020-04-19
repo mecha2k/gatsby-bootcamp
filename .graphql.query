@@ -1,0 +1,55 @@
+query getSite {
+  site {
+    siteMetadata {
+      title
+      author
+    }
+  }
+}
+
+query getFiles {
+  allFile {
+    edges {
+      node {
+        name
+        extension
+        dir
+      }
+    }
+  }
+}
+
+query getMDfiles {
+  allMarkdownRemark {
+    edges {
+      node {
+        frontmatter {
+          title
+          date
+        }
+        html
+        excerpt
+      }
+    }
+  }
+}
+
+query getSlugs {
+  allMarkdownRemark {
+    edges {
+      node {
+        fields {
+          slug
+        }
+      }
+    }
+  }
+}
+
+query getSlug($slug: String!) {
+  markdownRemark(fields: {slug: {eq: $slug}}) {
+    frontmatter {
+      title
+    }
+  }
+}
