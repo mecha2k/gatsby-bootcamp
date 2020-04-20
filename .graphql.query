@@ -53,3 +53,20 @@ query getSlug($slug: String!) {
     }
   }
 }
+
+query getAllContentful {
+  allContentfulBlogPost(
+    sort: {
+      fields: publishedDate
+      order: DESC
+    }
+  ) {
+    edges {
+      node {
+        title
+        slug
+        publishedDate(formatString:"MMMM Do, YYYY")
+      }
+    }
+  }
+}
