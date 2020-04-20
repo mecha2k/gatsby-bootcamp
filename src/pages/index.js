@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import Layout from "../componenets/layout"
+import Layout from "../components/layout"
 
 class Index extends React.Component {
   render() {

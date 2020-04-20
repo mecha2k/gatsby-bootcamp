@@ -28,13 +28,13 @@ module.exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  response.data.allMarkdownRemark.edges.forEach(edge => {
+  response.data.allMarkdownRemark.edges.forEach((edge) => {
     createPage({
       component: blogTemplate,
       path: `/blog/${edge.node.fields.slug}`,
       context: {
-        slug: edge.node.fields.slug
-      }
+        slug: edge.node.fields.slug,
+      },
     })
   })
 }

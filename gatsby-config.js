@@ -4,16 +4,26 @@
 module.exports = {
   siteMetadata: {
     title: "Full-Stack Bootcamp",
-    author: "cstory.com"
+    author: "cstory.com",
   },
+
   plugins: [
+    {
+      resolve: "gatsby-source-contentful",
+      options: {
+        spaceId: "9mj0je1dgcjl",
+        accessToken: "7tQetEQF0QsQXMtpga7YKHjFIo_d8RYlDdok-04JmAQ",
+      },
+    },
+
     "gatsby-plugin-sass",
+
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "src",
-        path: `${__dirname}/src/`
-      }
+        path: `${__dirname}/src/`,
+      },
     },
 
     "gatsby-plugin-sharp",
@@ -26,11 +36,11 @@ module.exports = {
             resolve: "gatsby-remark-images",
             options: {
               maxWidth: 750,
-              linkImagesToOriginal: false
-            }
-          }
-        ]
-      }
-    }
-  ]
+              linkImagesToOriginal: false,
+            },
+          },
+        ],
+      },
+    },
+  ],
 }
