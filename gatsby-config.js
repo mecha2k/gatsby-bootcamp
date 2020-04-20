@@ -1,6 +1,8 @@
 // Configure your Gatsby site with this file.
 // See: https://www.gatsbyjs.org/docs/gatsby-config/
 
+require("dotenv").config()
+
 module.exports = {
   siteMetadata: {
     title: "Full-Stack Bootcamp",
@@ -11,8 +13,8 @@ module.exports = {
     {
       resolve: "gatsby-source-contentful",
       options: {
-        spaceId: "9mj0je1dgcjl",
-        accessToken: "7tQetEQF0QsQXMtpga7YKHjFIo_d8RYlDdok-04JmAQ",
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
 
